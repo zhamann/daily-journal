@@ -20,14 +20,24 @@ const journalData: JournalData = data as JournalData;
 const journal: JournalEntry[] = journalData.journal;
 
 const JournalPage: React.FC<JournalProps> = ({ params }) => {
+    // Match the date
     const date = params.slug?.replaceAll('-', '/');
     const entry = journal.find((item) => item.date === date);
+
+    // Format the date for the card
+    const formattedDate = new Date(`${date}`).toLocaleString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+    });
+
     const text = entry?.text || "Entry not found.";
 
     return (
-        <div className={'card border p-4 drop-shadow-md rounded mb-4 bg-white flex flex-col'}>
-            <div>My Post: {date}</div>
-            <div>Text: {text}</div>
+        <div className={'card border p-8 drop-shadow-md rounded mb-4 bg-white flex flex-col'}>
+            <div className="text-lg font-bold text-center">{formattedDate}</div>
+            <hr className="m-2"></hr>
+            <div className='mt-4 mx-4'>{text}</div>
         </div>
     );
 };

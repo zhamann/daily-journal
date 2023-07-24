@@ -21,19 +21,21 @@ const HomePage: React.FC = () => {
       console.log(journalEntry)
       await axios.post('/api/log', { date: shortDate, text: journalEntry });
       console.log('Data submitted successfully!');
+      setJournalEntry('');
     } catch (error) {
       console.error('Error submitting data:', error);
     }
   };
 
   return (
-    <div className={'card border p-4 drop-shadow-md rounded mb-4 bg-white flex flex-col w-screen'}>
+    <div className={'card border p-8 drop-shadow-md rounded mb-4 bg-white flex flex-col w-screen'}>
       <div className="text-lg font-bold text-center">{longDate}</div>
       <hr className="m-2"></hr>
       <textarea
         name="journal"
         placeholder="Write to your journal here..."
         onChange={handleInputChange}
+        value={journalEntry}
         className="border border-gray-300 p-2 mx-4 rounded mt-4 h-32"
       />
       <button
