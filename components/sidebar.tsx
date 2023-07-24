@@ -14,9 +14,9 @@ const SideBar = () => {
                     <div className="text-md font-bold">Journal Log</div>
                     <div className="text-sm">{journalLength} entries</div>
                 </div>
-                <div className="text-2xl font-bold flex flex-col justify-center cursor-pointer">
+                <a href="/" className="text-2xl font-bold flex flex-col justify-center cursor-pointer">
                    +
-                </div>
+                </a>
                 </div>
                 <div className="h-[calc(100dvh-4rem)] overflow-y-auto bg-white">
                 <JournalLog />

@@ -25,7 +25,7 @@ const JournalPage: React.FC<JournalProps> = ({ params }) => {
     const text = entry?.text || "Entry not found.";
 
     return (
-        <div>
+        <div className={'card border p-4 drop-shadow-md rounded mb-4 bg-white flex flex-col'}>
             <div>My Post: {date}</div>
             <div>Text: {text}</div>
         </div>

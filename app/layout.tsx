@@ -31,9 +31,7 @@ export default function RootLayout({
             </header>
             <div className="flex flex-1 items-center justify-center bg-[#F5F5F5]">
               <div className='card-wrapper flex justify-center max-w-2xl'>
-                <div className={'card border p-4 drop-shadow-md rounded mb-4 bg-white flex flex-col'}>
-                  {children}
-                </div>
+                {children}
               </div>
             </div>
           </main>
